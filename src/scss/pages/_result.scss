@@ -1,0 +1,84 @@
+@use "../abstracts/" as *;
+
+.search__form {
+  display: flex;
+  justify-content: space-between;
+  margin: 5rem 15rem;
+  @include border(all, $white);
+  padding: 0.5rem;
+  border-radius: 1rem;
+  .light & {
+    @include border(all, $bgBlack);
+  }
+}
+
+.search__searchbar-input {
+  line-height: 3rem;
+  width: 100rem;
+  font-size: 2rem;
+  text-indent: 2rem;
+  background: none;
+  border: none;
+  color: $secondary;
+  &:focus {
+    outline: none;
+  }
+  .light & {
+    color: $primary;
+  }
+}
+
+.highlight {
+  color: $secondary;
+}
+
+.search__result-wrapper {
+  margin-bottom: 5rem;
+}
+
+.search-result__title {
+  font-size: 2.4rem;
+  text-transform: uppercase;
+  color: $white;
+  padding: 1rem;
+  margin-left: 3rem;
+  .light & {
+    color: $bgBlack;
+  }
+}
+
+.movie-card-noresult {
+  grid-column: 1 / -1;
+  height: 25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: none;
+}
+
+.card-noresult__text {
+  color: $white;
+  font-size: 3rem;
+  .light & {
+    color: $bgBlack;
+  }
+  & span {
+    color: $primary;
+  }
+}
+
+.search__result-movies {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(22rem, 22rem));
+}
+
+.movie-cardimgcontainer {
+  & img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+hr {
+  margin: 3rem;
+}

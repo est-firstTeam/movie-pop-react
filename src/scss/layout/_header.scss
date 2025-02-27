@@ -1,0 +1,90 @@
+@use "../abstracts/" as *;
+
+.header {
+  position: relative;
+  display: grid;
+  grid-template-columns: min-content 1fr min-content;
+  align-items: center;
+  padding: 0 5rem;
+  height: 15rem;
+  background-color: $bgBlack;
+}
+
+.header__logo-container {
+  width: 8rem;
+  height: 12rem;
+  & img {
+    width: 100%;
+  }
+}
+.header__search-input {
+  background: none;
+  border: none;
+  caret-color: $secondary;
+  color: $secondary;
+  font-size: 3rem;
+
+  &:focus {
+    outline: none;
+  }
+}
+.header__search-form {
+  display: none;
+  gap: 0.8rem;
+  position: relative;
+  font-size: 3rem;
+  color: $secondary;
+  border-bottom: none;
+  margin-right: 2.4rem;
+
+  &::after {
+    content: "";
+    background: $mainGradientcolor;
+    display: block;
+    width: 100%;
+    height: 1.5px;
+    position: absolute;
+    bottom: -1.6rem;
+    animation: fadeInRight 0.1s ease-in-out;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.light header {
+  background-color: $white;
+}
+@-webkit-keyframes fadeInRight {
+  0% {
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+    -webkit-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+    opacity: 1;
+  }
+}
+@keyframes fadeInRight {
+  0% {
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+    -webkit-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+    opacity: 1;
+  }
+}

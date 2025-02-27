@@ -1,0 +1,45 @@
+@use "./variables" as *;
+
+@mixin horizontal-scroll {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+@mixin border($position, $color) {
+  @if ($position == "all") {
+    border: 1px solid $color;
+  } @else if($position == "top") {
+    border-top: 1px solid $color;
+  } @else if($position == "right") {
+    border-right: 1px solid $color;
+  } @else if($position == "bottom") {
+    border-bottom: 1px solid $color;
+  } @else if($position == "left") {
+    border-left: 1px solid $color;
+  }
+}
+
+@mixin titleText {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@mixin gridList {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+}
+
+@mixin horizontal {
+  height: 0.1rem;
+  background-color: $horizontalLine;
+  margin-bottom: 2.8rem;
+  border: 0;
+}
+
+@mixin bg($image) {
+  background: url("/images/#{$image}.svg") no-repeat;
+}
+
+@mixin bgCenter($image) {
+  background: url("/images/#{$image}.svg") no-repeat center;
+}

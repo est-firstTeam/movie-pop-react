@@ -1,0 +1,186 @@
+@use "../abstracts/" as *;
+
+.slide__container {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: url("../images/bg.png") no-repeat center;
+  background-size: cover;
+  position: relative;
+  isolation: isolate;
+  &::after {
+    content: "";
+    position: absolute;
+    background: $bgBlack;
+    z-index: -1;
+    inset: 0;
+    opacity: 0.6;
+  }
+
+  .light & {
+    background: url("/images/bg-light.jpg");
+    &::after {
+      content: "";
+      position: absolute;
+      background: $white;
+      z-index: -1;
+      inset: 0;
+      opacity: 0.85;
+    }
+  }
+}
+
+.slide__content {
+  padding: 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .light & * {
+    color: $bgBlack;
+  }
+}
+.slide__subtitle {
+  color: $white;
+  font-size: 4.8rem;
+  font-family: $titleFont;
+}
+.slide__title {
+  font-size: 8rem;
+  font-family: $titleFont;
+  background: $mainGradientcolor;
+  @include titleText;
+}
+.slide__show {
+  color: $white;
+  font-size: 1.8rem;
+  line-height: 1.5;
+  margin-bottom: 3rem;
+}
+
+.slide__poster {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 80%;
+    max-width: 40rem;
+    border-radius: 1rem;
+  }
+}
+
+.swiper-wrapper {
+  margin-top: 3rem;
+  height: 40rem;
+  position: relative;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+}
+
+.new__title,
+.classic__title,
+.recommend__title {
+  font-size: 2.4rem;
+  padding: 3rem 3rem;
+  color: $white;
+  .light & {
+    color: $bgBlack;
+  }
+}
+
+.new__container,
+.classic__container,
+.recommend__container {
+  .light & * {
+    color: $bgBlack;
+  }
+}
+
+.new__container,
+.classic__container,
+.recommend__container {
+  .light & * {
+    color: $bgBlack;
+  }
+}
+
+.recommend__content {
+  @include gridList;
+}
+
+.movie-card {
+  margin-left: 5rem;
+  padding-bottom: 2.5rem;
+  transition: transform 0.2s;
+
+  img {
+    width: 17rem;
+    height: 25rem;
+    margin-top: 2rem;
+    object-fit: contain;
+  }
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  .light & * {
+    color: $bgBlack;
+  }
+}
+
+.movie-card__imgcontainer {
+  height: 30rem;
+}
+
+.movie-title {
+  color: $white;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.post-info {
+  margin-top: 1rem;
+}
+
+.movie-year {
+  font-size: 1.4rem;
+  color: $fontGray10;
+}
+
+.movie-runtime {
+  position: relative;
+  display: inline-block;
+  min-width: 4.5rem;
+  font-size: 1.4rem;
+  color: $fontGray10;
+  padding-left: 3rem;
+
+  &::before {
+    position: absolute;
+    top: 0.5rem;
+    right: 3.5rem;
+    content: "";
+    @include bg(bgDot);
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
+.movie-rating {
+  position: relative;
+  font-size: 1.4rem;
+  color: $fontGray10;
+  padding-left: 3rem;
+  &::before {
+    position: absolute;
+    top: 0.1rem;
+    right: 2.5rem;
+    content: "⭐️";
+  }
+}

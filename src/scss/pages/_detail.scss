@@ -1,0 +1,136 @@
+@use "../abstracts/" as *;
+
+.detail__container {
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  padding: 8rem 9.7rem;
+}
+
+.detail__movie-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5.4rem;
+}
+
+.detail__movie-info-inner {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+  h2 {
+    font-size: 8rem;
+    font-family: "Bebas Neue", sans-serif;
+    background: $mainGradientcolor;
+    @include titleText;
+  }
+
+  p {
+    width: 90%;
+    color: $white;
+    font-size: 1.9rem;
+    line-height: 150%;
+    margin-bottom: 3.8rem;
+  }
+
+  .light & * {
+    color: $bgBlack;
+  }
+}
+
+.bookmarked {
+  width: 3rem;
+  aspect-ratio: 1;
+  @include bgCenter(ico_bookmark_filled);
+  background-size: cover;
+}
+
+.not-bookmarked {
+  width: 3rem;
+  aspect-ratio: 1;
+  @include bgCenter(ico_bookmark);
+  background-size: cover;
+  .light & {
+    width: 3rem;
+    aspect-ratio: 1;
+    @include bgCenter(ico_bookmark_black);
+    background-size: cover;
+    &:hover {
+      width: 3rem;
+      aspect-ratio: 1;
+      @include bgCenter(ico_bookmark_primary);
+      background-size: cover;
+    }
+  }
+}
+
+.detail__genre-area {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.genre__item {
+  width: min-content;
+  @include border(all, $white);
+  padding: 0.4rem;
+  border-radius: 5rem;
+  color: $white;
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 300;
+  white-space: nowrap;
+
+  .light & {
+    @include border(all, $bgBlack);
+  }
+}
+
+.info__sub-area {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2.35rem;
+}
+
+.detail__movie-info-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.info__sub-title {
+  display: inline-block;
+  width: 13rem;
+
+  color: $carouselGray10;
+  font-size: 1.9rem;
+}
+
+.info__sub-desc {
+  color: $white;
+  font-size: 1.9rem;
+}
+
+.info__time-area {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+.detail_movie-info-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.img__wrapper {
+  display: flex;
+  width: 30rem;
+  height: 44rem;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

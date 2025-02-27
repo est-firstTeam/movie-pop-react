@@ -1,0 +1,11 @@
+@use "../abstracts/" as *;
+
+.bookmark__title {
+  font-size: 2.4rem;
+  padding: 3rem 6rem;
+  color: $white;
+}
+
+.bookmark__content {
+  @include gridList;
+}
