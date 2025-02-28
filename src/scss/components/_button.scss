@@ -2,33 +2,16 @@
 
 // header 영역 버튼
 .header__open-search-form-btn {
-  width: 3rem;
-  height: 3rem;
   margin-right: 2.4rem;
   color: $carouselGray10;
-  @include bg(ico_search);
-  background-size: cover;
   transition: all 0.2s;
 }
 
 .header__cancel-btn {
-  width: 3rem;
-  height: 3rem;
-
-  padding-top: 0.5rem;
-  display: block;
-  z-index: 100;
-  @include bg(ico_cancel);
-  background-size: cover;
 }
 
 .header__search-submit {
-  width: 3rem;
-  height: 3rem;
   color: $white;
-  padding-bottom: 2rem;
-  @include bg(ico_search);
-  background-size: cover;
   color: $carouselGray10;
   transition: all 0.2s;
 }
