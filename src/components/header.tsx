@@ -3,10 +3,12 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import IcoSearch from "../../src/images/ico_search.svg?react";
 import IcoClose from "../../src/images/ico_cancel.svg?react";
+import useInput from "../hooks/useInput";
 
 const Header = () => {
   const navigate = useNavigate();
   const [openSearchForm, setOpenSearchForm] = useState<boolean>(false);
+  const { value: inputValue, onChange, resetValue } = useInput("");
 
   const goToBookMark = () => {
     navigate("/bookmark");
@@ -16,7 +18,12 @@ const Header = () => {
     setOpenSearchForm(!openSearchForm);
   };
 
-  const handleSearchSubmit = () => {};
+  const handleSearchSubmit = (
+    event: React.MouseEvent<HTMLElement, MouseEvent>
+  ) => {
+    event.preventDefault();
+    navigate(`/search/${inputValue}`);
+  };
 
   return (
     <header className="header">
@@ -50,12 +57,22 @@ const Header = () => {
             >
               <IcoSearch width="30" height="30" />
             </button>
-            <input className="header__search-input" type="text" required />
+            <input
+              className="header__search-input"
+              type="text"
+              value={inputValue}
+              onChange={onChange}
+              required
+              autoFocus
+            />
             <button
               type="button"
               className="header__cancel-btn"
               aria-label="cancel search"
-              onClick={handleToggleOpenSearchForm}
+              onClick={() => {
+                resetValue();
+                handleToggleOpenSearchForm();
+              }}
             >
               <IcoClose width="30" height="30" />
             </button>
