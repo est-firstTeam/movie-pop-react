@@ -1,9 +1,9 @@
 import { Outlet } from "react-router-dom";
-
+import Header from "../components/header";
 const BaseLayout = () => {
   return (
     <div>
-      {/* TODO: header자리 */}
+      <Header />
       <main>
         <Outlet />
       </main>

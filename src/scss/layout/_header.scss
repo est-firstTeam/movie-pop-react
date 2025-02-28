@@ -17,6 +17,7 @@
     width: 100%;
   }
 }
+
 .header__search-input {
   background: none;
   border: none;
@@ -28,8 +29,9 @@
     outline: none;
   }
 }
+
 .header__search-form {
-  display: none;
+  display: flex;
   gap: 0.8rem;
   position: relative;
   font-size: 3rem;
@@ -56,6 +58,7 @@
 .light header {
   background-color: $white;
 }
+
 @-webkit-keyframes fadeInRight {
   0% {
     -webkit-transform: scaleX(0);

@@ -5,6 +5,7 @@ const BaseLayout = lazy(() => import("./layout/BaseLayout"));
 const Main = lazy(() => import("./pages/Main"));
 const MovieDetail = lazy(() => import("./pages/MovieDetail"));
 const SearchResult = lazy(() => import("./pages/SearchResult"));
+const BookMark = lazy(() => import("./pages/Bookmark"));
 
 function App() {
   const router = createBrowserRouter([
@@ -24,8 +25,13 @@ function App() {
           path: "/search/:title",
           element: <SearchResult />,
         },
+        {
+          path: "/bookmark",
+          element: <BookMark />,
+        },
       ],
     },
   ]);
+  return <RouterProvider router={router} />;
 }
 export default App;
